@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-
 import { addExpense } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
-
+import React from "react";
 import {Provider} from 'react-redux'
 
 const store=configureStore();
 
 store.dispatch(addExpense({ description: 'Water bill', amount:4500 }));
-store.dispatch(addExpense({ description: 'Gas bill' }));
+store.dispatch(addExpense({ description: 'Gas bill', amount:13000 }));
 store.dispatch(setTextFilter('water'));
 
 setTimeout(()=>{
